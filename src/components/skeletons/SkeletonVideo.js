@@ -4,7 +4,7 @@ import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 const SkeletonVideo = () => {
    return (
       <div style={{ width: '100%', margin: '1rem 0' }}>
-         <SkeletonTheme color='#343a44' highlightColor='#3c4147'>
+         <SkeletonTheme color='#3b424d' highlightColor='#35393d'>
             <Skeleton height={180} />
             <div>
                <Skeleton

@@ -1,8 +1,7 @@
 
 import firebase from 'firebase/compat/app'
 import 'firebase/compat/auth';
-
-
+// TODO: Add SDKs for Firebase products that you want to use
 const firebaseConfig = {
     apiKey: "AIzaSyDHHuvvLkWDMtdw9Hf2fnbD3ejJo-Wkyv4",
     authDomain: "yt-clone-89.firebaseapp.com",
