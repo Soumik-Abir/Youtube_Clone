@@ -30,7 +30,6 @@ const HomeScreen = () => {
   return (
     <Container>
       <CategoriesBar />
-
       <InfiniteScroll
         dataLength={videos.length}
         next={fetchData}

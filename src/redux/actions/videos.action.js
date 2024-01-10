@@ -41,7 +41,7 @@ export const getPopularVideos = () => async (dispatch, getState) => {
     }
 }
 
-export const getVideosByCategory = keyword => async (dispatch, getState) => {
+export const getVideosByCategory = (keyword) => async (dispatch, getState) => {
     try {
        dispatch({
           type: HOME_VIDEOS_REQUEST,
