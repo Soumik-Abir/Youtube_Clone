@@ -3,13 +3,13 @@ import { Col, Row } from 'react-bootstrap'
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import Comments from '../../comments/Comments'
-import VideoHorizontal from '../../videoHorizontal/VideoHorizontal'
-import VideoMetaData from '../../videoMetaData/VideoMetaData'
+import Comments from '../../components/comments/Comments'
+import VideoHorizontal from '../../components/videoHorizontal/VideoHorizontal'
+import VideoMetaData from '../../components/videoMetaData/VideoMetaData'
 import {
    getRelatedVideos,
    getVideoById,
-} from '../../../redux/actions/videos.action'
+} from '../../redux/actions/videos.action'
 import './_watchScreen.scss'
 
 const WatchScreen = () => {

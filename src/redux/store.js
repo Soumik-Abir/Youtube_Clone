@@ -1,7 +1,6 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { authReducer } from './reducers/auth.reducer';
-import {homeVideosReducer} from './reducers/videos.reducer'
-import { selectedVideoReducer } from './reducers/videos.reducer'
+import {homeVideosReducer , selectedVideoReducer, relatedVideoReducer} from './reducers/videos.reducer'
 import { channelDetailsReducer } from './reducers/channel.reducer'
 import { commentListReducer } from './reducers/comments.reducer';
 
@@ -11,6 +10,7 @@ const rootReducer = combineReducers({
   selectedVideo: selectedVideoReducer,
   channelDetails: channelDetailsReducer,
   commentList: commentListReducer,
+  relatedVideos: relatedVideoReducer,
 })
 
 const store = configureStore({

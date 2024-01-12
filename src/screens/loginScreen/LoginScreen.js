@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import './_loginScreen.scss'
 import { useDispatch, useSelector } from 'react-redux'
-import { login } from '../../../redux/actions/auth.action'
+import { login } from '../../redux/actions/auth.action'
 import { useNavigate } from 'react-router-dom'
 
 const LoginScreen = () => {

@@ -11,7 +11,7 @@ import {
   getChannelDetails,
 } from "../../redux/actions/channel.action";
 
-const VideoMetaData = ({ video: { snippet, statistics }, videoId }) => {
+const VideoMetaData = ({ video: { snippet, statistics,contentDetails }, videoId }) => {
   const { channelId, channelTitle, description, title, publishedAt } = snippet;
   const { viewCount, likeCount, dislikeCount } = statistics;
 
