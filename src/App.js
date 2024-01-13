@@ -1,10 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  Route,
-  Routes,
-  Navigate,
-  useNavigate,
-} from "react-router-dom";
+import { Route, Routes, Navigate, useNavigate } from "react-router-dom";
 import Header from "./components/header/Header";
 import Sidebar from "./components/sidebar/Sidebar";
 import { Container } from "react-bootstrap";
@@ -14,6 +9,8 @@ import "./_app.scss";
 import { useSelector } from "react-redux";
 import WatchScreen from "./screens/watchScreen/WatchScreen";
 import SearchScreen from "./screens/SearchScreen";
+import SubscriptionsScreen from "./screens/subscriptionsScreen/SubscriptionsScreen";
+import ChannelScreen from "./screens/channelScreen/ChannelScreen";
 
 const Layout = ({ children }) => {
   const [sidebar, toggleSidebar] = useState(false);
@@ -34,16 +31,15 @@ const Layout = ({ children }) => {
 };
 
 const App = () => {
-  const { accessToken, loading } = useSelector(state => state.auth)
+  const { accessToken, loading } = useSelector((state) => state.auth);
 
   const navigate = useNavigate();
 
-
-   useEffect(() => {
-      if (!loading && !accessToken) {
-        navigate('/auth')
-      }
-   }, [accessToken, loading, navigate])
+  useEffect(() => {
+    if (!loading && !accessToken) {
+      navigate("/auth");
+    }
+  }, [accessToken, loading, navigate]);
 
   return (
     <>
@@ -61,7 +57,7 @@ const App = () => {
           path="/search/:query"
           element={
             <Layout>
-              <SearchScreen/>
+              <SearchScreen />
             </Layout>
           }
         />
@@ -69,7 +65,23 @@ const App = () => {
           path="/watch/:id"
           element={
             <Layout>
-              <WatchScreen/>
+              <WatchScreen />
+            </Layout>
+          }
+        />
+        <Route
+          path="/feed/subscriptions"
+          element={
+            <Layout>
+              <SubscriptionsScreen />
+            </Layout>
+          }
+        />
+        <Route
+          path="/channel/:channelId"
+          element={
+            <Layout>
+              <ChannelScreen/>
             </Layout>
           }
         />

@@ -8,10 +8,16 @@
    &__left {
       position: relative;
       text-align: center;
+      padding-left: 0 !important;
    }
 
    &__thumbnail {
       width: 100%;
+
+      &-channel {
+         width: 50%;
+         border-radius: 50%;
+      }
 
       &-wrapper {
          width: 100%;
@@ -44,6 +50,10 @@
       @include line-clamp(2);
    }
 
+   &__desc {
+      @include line-clamp(2);
+   }
+
    &__channel {
       img {
          width: 36px;
@@ -53,6 +63,7 @@
          margin-right: 0.5rem;
          cursor: pointer;
       }
+
       p {
          font-size: 0.9rem;
          @include line-clamp(1);
@@ -67,20 +78,22 @@
       &__details {
          @include line-clamp(1);
       }
+
       &__channel {
          margin: 0.1rem 0;
 
          img {
             display: none;
          }
+
          p {
             font-size: 0.9rem;
          }
       }
 
-      //   &__desc {
-      //      display: none;
-      //   }
+      &__desc {
+         display: none;
+      }
 
       &__title {
          font-size: 1rem;

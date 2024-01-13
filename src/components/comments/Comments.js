@@ -13,7 +13,9 @@ const Comments = ({ videoId, totalComments }) => {
       dispatch(getCommentsOfVideoById(videoId))
    }, [videoId, dispatch])
 
+
    const comments = useSelector(state => state.commentList.comments)
+   const { photoURL } = useSelector(state => state.auth?.user)
 
    const [text, setText] = useState('')
 
@@ -34,8 +36,8 @@ const Comments = ({ videoId, totalComments }) => {
          <p>{totalComments} Comments</p>
          <div className='my-2 comments__form d-flex w-100'>
             <img
-               src='https://www.pngkey.com/png/full/114-1149878_setting-user-avatar-in-specific-size-without-breaking.png'
-               alt=''
+               src={photoURL}
+               alt='avatar'
                className='mr-3 rounded-circle'
             />
             <form onSubmit={handleComment} className='d-flex flex-grow-1'>
