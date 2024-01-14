@@ -10,6 +10,7 @@ import "./_channelScreen.scss";
 import { getVideosByChannel } from "../../redux/actions/videos.action";
 import { getChannelDetails } from "../../redux/actions/channel.action";
 import Video from "../../components/video/Video";
+import { Helmet } from "react-helmet";
 
 const ChannelScreen = () => {
   const { channelId } = useParams();
@@ -28,11 +29,14 @@ const ChannelScreen = () => {
 
   return (
     <>
+    <Helmet>
+            <title>{snippet?.title}</title>
+      </Helmet>
       <div className="px-5 py-2 my-2 d-flex justify-content-between align-items-center channelHeader">
-        <div className="d-flex align-items-center">
+        <div className="d-flex align-items-center channelHeader__left">
           <img src={snippet?.thumbnails?.default?.url} alt="" />
 
-          <div className="ml-3 channelHeader__details">
+          <div className="ml-3 p-2 channelHeader__details">
             <h3>{snippet?.title}</h3>
             <span>
               {numeral(statistics?.subscriberCount).format("0.a")} subscribers
