@@ -23,9 +23,12 @@ const ChannelScreen = () => {
   }, [dispatch, channelId]);
 
   const { videos, loading } = useSelector((state) => state.channelVideos);
-  const { snippet, statistics } = useSelector(
-    (state) => state.channelDetails.channel
-  );
+  // const { snippet, statistics } = useSelector(
+  //   (state) => state.channelDetails.channel
+  // );
+
+  const channelDetails = useSelector((state) => state.channelDetails.channel);
+  const { snippet, statistics } = channelDetails || {};
 
   return (
     <>
